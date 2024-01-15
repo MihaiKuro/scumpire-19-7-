@@ -33,10 +33,7 @@ input[type="number"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
-#rezultat_19{
-   padding-top: 10px;
-    
-}
+
 button {
     margin-top: 10px;
     border-radius: 7px;
@@ -47,7 +44,7 @@ button {
 .istoric-list {
     list-style-type: none;
     padding: 0;
-    max-height: 70vh; 
+    max-height: 65vh; 
     overflow-y: auto;
 
 }
@@ -71,21 +68,26 @@ button {
     #dreapta {
         border: 1px solid #ddd;
         padding:5px;
-        width: 350px;
-        height: 390px;
+        width: 380px;
+        height: 400px;
     }
     input[type="number"] {
         padding: 5px;
-        font-size: 12px;
+        font-size: 14px;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
     }
 
+    button {
+        margin-bottom: 8px;
+        
+    }
+
     .istoric-list {
         list-style-type: none;
         padding: 0;
-        max-height: 200px; 
+        max-height: 160px; 
         overflow-y: auto;
     
     }

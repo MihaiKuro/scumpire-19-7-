@@ -36,3 +36,23 @@ function calculeazaPretFinal(scumpireType) {
     localStorage.setItem('counter_7', counter_7);
     localStorage.setItem('istoricPreturi', JSON.stringify(istoricPreturi));
 }
+
+// Funcție pentru ștergerea istoricului
+function stergeIstoric(scumpireType) {
+    // Șterge istoricul pentru tipul specificat
+    var istoricList = document.getElementById("istoric-list_" + scumpireType);
+    istoricList.innerHTML = "";
+
+    // Resetare contor pentru tipul specificat
+    if (scumpireType === '19') {
+        counter_19 = 1;
+        localStorage.setItem('counter_19', counter_19);
+    } else if (scumpireType === '7') {
+        counter_7 = 1;
+        localStorage.setItem('counter_7', counter_7);
+    }
+
+    // Șterge istoricul din localStorage
+    localStorage.removeItem('istoricPreturi_' + scumpireType);
+}
+

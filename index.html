@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator de Preț cu Istoric</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="calculator">
+        <div id="stanga">
+            <h2>Scumpire 19%</h2>
+            <label for="pret_initial_19">Pret Initial:</label>
+            <input type="number" id="pret_initial_19">
+            <button onclick="calculeazaPretFinal('19')">Calculeaza</button>
+            <div id="rezultat_19"></div>
+            <ul id="istoric-list_19" class="istoric-list"></ul>
+        </div>
+
+        <div id="dreapta">
+            <h2>Scumpire 7%</h2>
+            <label for="pret_initial_7">Pret Initial:</label>
+            <input type="number" id="pret_initial_7">
+            <button onclick="calculeazaPretFinal('7')">Calculeaza</button>
+            <div id="rezultat_7"></div>
+            <ul id="istoric-list_7" class="istoric-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

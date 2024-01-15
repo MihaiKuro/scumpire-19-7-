@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+    background: rgb(93,120,219);
+    background: linear-gradient(90deg,
+    rgb(147, 155, 184) 0%, rgb(63, 79, 150) 23%, 
+    rgb(80, 96, 203) 47%,
+    rgba(77, 156, 182, 0.74) 78%,
+    rgba(28,188,219,0.9501050420168067) 96%); 
+    overflow: none;
+    font-size: 24px;
+}
+
+#calculator {
+    display: flex;
+    justify-content: space-between;
+}
+
+#stanga,
+#dreapta {
+    width: 45%;
+    height: 90vh;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+}
+input[type="number"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#rezultat_19{
+   padding-top: 10px;
+    
+}
+button {
+    margin-top: 10px;
+    border-radius: 7px;
+    font-size: 20px;
+    
+}
+
+.istoric-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 70vh; 
+    overflow-y: auto;
+
+}
+
+.istoric-list li {
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Styles for small screens (e.g., phones) */
+
+    #calculator {
+        flex-direction: column;
+    }
+    
+    #stanga,
+    #dreapta {
+        width: 100%;
+        height: auto;
+    }
+
+    #stanga {
+        margin-bottom: 10px;
+    }
+
+    #dreapta {
+        margin-top: 10px;
+    }
+
+    #rezultat_19 {
+        margin: 10px;
+    }
+
+    #rezultat_19 h2 {
+        margin: 0;
+    }
+    
+
+
+
+}
+

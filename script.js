@@ -21,4 +21,6 @@ function calculeazaPretFinal(scumpireType) {
     var listItem = document.createElement("li");
     listItem.appendChild(document.createTextNode("Calcul " + (scumpireType === '19' ? counter_19++ : counter_7++) + ": " + pretFinal.toFixed(2)));
     istoricList.appendChild(listItem);
+
+    istoricList.insertBefore(listItem, istoricList.firstChild);
 }

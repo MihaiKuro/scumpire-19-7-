@@ -58,34 +58,37 @@ button {
 
 @media only screen and (max-width: 600px) {
     /* Styles for small screens (e.g., phones) */
-
+    body{
+        font-size: 16px;
+        padding: 0px;
+        margin: 0px;
+    }
     #calculator {
         flex-direction: column;
     }
     
     #stanga,
     #dreapta {
-        width: 100%;
-        height: auto;
+        border: 1px solid #ddd;
+        padding:5px;
+        width: 350px;
+        height: 400px;
+    }
+    input[type="number"] {
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
     }
 
-    #stanga {
-        margin-bottom: 10px;
-    }
-
-    #dreapta {
-        margin-top: 10px;
-    }
-
-    #rezultat_19 {
-        margin: 10px;
-    }
-
-    #rezultat_19 h2 {
-        margin: 0;
-    }
+    .istoric-list {
+        list-style-type: none;
+        padding: 0;
+        max-height: 200px; 
+        overflow-y: auto;
     
-
+    }
 
 
 }

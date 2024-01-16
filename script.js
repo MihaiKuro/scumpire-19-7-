@@ -1,58 +1,47 @@
-// Initialize counters from localStorage or default to 1
-var counter_19 = parseInt(localStorage.getItem('counter_19')) || 1;
-var counter_7 = parseInt(localStorage.getItem('counter_7')) || 1;
-
-// Initialize history from localStorage or default to an empty array
-var istoricPreturi = JSON.parse(localStorage.getItem('istoricPreturi')) || [];
+let arr19 = [];
+let arr7 = [];
 
 function calculeazaPretFinal(scumpireType) {
-    var pretInitial = parseFloat(document.getElementById("pret_initial_" + scumpireType).value);
+    let pretInitial = parseFloat(document.getElementById("pret_initial_" + scumpireType).value);
 
     // Scumpire 1: 65%
-    var scumpirePrima = 0.65;
-    var pretDupaPrimaScumpire = pretInitial * (1 + scumpirePrima);
+    let scumpirePrima = 1.65;
+    let pretDupaPrimaScumpire = pretInitial * scumpirePrima;
 
     // Scumpire 2: 19% sau 7%
-    var scumpireDoua = scumpireType === '19' ? 0.19 : 0.07;
-    var pretFinal = pretDupaPrimaScumpire * (1 + scumpireDoua);
 
-    var rezultatDiv = document.getElementById("rezultat_" + scumpireType);
-    var istoricList = document.getElementById("istoric-list_" + scumpireType);
+    let scumpireDoua = scumpireType === '19' ? 1.19 : 1.07;
+    let pretFinal = pretDupaPrimaScumpire * scumpireDoua;
 
-    rezultatDiv.innerHTML = "Pretul final este: " + pretFinal.toFixed(2);
+    let rezultatDiv = document.getElementById("rezultat_" + scumpireType);
+    let istoricList = document.getElementById("istoric-list_" + scumpireType);
+
+    rezultatDiv.innerHTML = "Pretul final este: " + pretFinal.toFixed(3);
 
     // Adaugă în istoric cu inversarea ordinii
-    var listItem = document.createElement("li");
-    listItem.appendChild(document.createTextNode("Calcul " + (scumpireType === '19' ? counter_19++ : counter_7++) + ": " + pretFinal.toFixed(2)));
+    let listItem = document.createElement("li");
+    listItem.appendChild(document.createTextNode("Calcul " + (scumpireType === '19' ? arr19.length +1 : arr7.length +1) + ": " + pretFinal.toFixed(3)));
 
-    // Inserarea în partea de sus a listei
     istoricList.insertBefore(listItem, istoricList.firstChild);
 
     // Adaugă la istoric
-    istoricPreturi.unshift(pretFinal.toFixed(2));
-
-    // Salvare contori și istoric în localStorage
-    localStorage.setItem('counter_19', counter_19);
-    localStorage.setItem('counter_7', counter_7);
-    localStorage.setItem('istoricPreturi', JSON.stringify(istoricPreturi));
+    if (scumpireType === '19') {
+        arr19.unshift(pretFinal.toFixed(3));
+    } else if (scumpireType === '7') {
+        arr7.unshift(pretFinal.toFixed(3));
+    }
+    
 }
 
-// Funcție pentru ștergerea istoricului
-function stergeIstoric(scumpireType) {
+function stergeIstoric(scumpireType){
     // Șterge istoricul pentru tipul specificat
-    var istoricList = document.getElementById("istoric-list_" + scumpireType);
+    let istoricList = document.getElementById("istoric-list_" + scumpireType);
     istoricList.innerHTML = "";
 
     // Resetare contor pentru tipul specificat
     if (scumpireType === '19') {
-        counter_19 = 1;
-        localStorage.setItem('counter_19', counter_19);
+        arr19 = [];
     } else if (scumpireType === '7') {
-        counter_7 = 1;
-        localStorage.setItem('counter_7', counter_7);
+        arr7 = [];
     }
-
-    // Șterge istoricul din localStorage
-    localStorage.removeItem('istoricPreturi_' + scumpireType);
 }
-
